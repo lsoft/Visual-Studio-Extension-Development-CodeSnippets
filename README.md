@@ -2,11 +2,23 @@
 Some useful links and pieces of code in the scope of Visual Studio Extension (vsix) development
 
 
-# Common
+# General
 
 ## Extensions for the Visual Studio gallery
 
 https://marketplace.visualstudio.com/
+
+## Get Started
+
+https://docs.microsoft.com/en-us/visualstudio/extensibility/?view=vs-2019&amp%3BWT.mc_id=docs-twitter-jamont
+
+## List of available services for extension author
+
+https://docs.microsoft.com/en-us/visualstudio/extensibility/internals/list-of-available-services?view=vs-2019
+
+## Chat
+
+https://gitter.im/Microsoft/extendvs
 
 
 # Code snippets
