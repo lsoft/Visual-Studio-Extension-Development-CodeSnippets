@@ -63,6 +63,86 @@ For example `EnvDTE.DTE.DTEEvents.OnBeginShutdown` should be used to determine t
 dte.ItemOperations.OpenFile(documentFullPath, "{" + VSConstants.LOGVIEWID_Code + "}");
 ```
 
+## Open file in Visual Studio and navigate to the required piece of code
+
+```csharp
+public static void OpenAndNavigate(
+    string documentFullPath,
+    int startLine,
+    int startColumn,
+    int endLine,
+    int endColumn
+    )
+{
+    if (documentFullPath == null)
+    {
+        throw new ArgumentNullException(nameof(documentFullPath));
+    }
+
+    ThreadHelper.ThrowIfNotOnUIThread(nameof(VisualStudioHelper.OpenAndNavigate));
+
+    var openDoc = AsyncPackage.GetGlobalService(typeof(IVsUIShellOpenDocument)) as IVsUIShellOpenDocument;
+
+    IVsWindowFrame frame;
+    Microsoft.VisualStudio.OLE.Interop.IServiceProvider sp;
+    IVsUIHierarchy hier;
+    uint itemid;
+    Guid logicalView = VSConstants.LOGVIEWID_Code;
+
+    if (ErrorHandler.Failed(
+        openDoc.OpenDocumentViaProject(
+            documentFullPath,
+            ref logicalView,
+            out sp,
+            out hier,
+            out itemid,
+            out frame)
+        )
+        || frame == null)
+    {
+        return;
+    }
+
+    object docData;
+    frame.GetProperty((int)__VSFPROPID.VSFPROPID_DocData, out docData);
+
+    // Get the VsTextBuffer  
+    var buffer = docData as VsTextBuffer;
+    if (buffer == null)
+    {
+        IVsTextBufferProvider bufferProvider = docData as IVsTextBufferProvider;
+        if (bufferProvider != null)
+        {
+            IVsTextLines lines;
+            ErrorHandler.ThrowOnFailure(
+                bufferProvider.GetTextBuffer(out lines)
+                );
+
+            buffer = lines as VsTextBuffer;
+
+            Debug.Assert(buffer != null, "IVsTextLines does not implement IVsTextBuffer");
+
+            if (buffer == null)
+            {
+                return;
+            }
+        }
+    }
+
+    IVsTextManager textManager = Package.GetGlobalService(typeof(VsTextManagerClass)) as IVsTextManager;
+
+    var docViewType = default(Guid);
+
+    textManager.NavigateToLineAndColumn(
+        buffer,
+        ref docViewType,
+        startLine,
+        startColumn,
+        endLine,
+        endColumn
+        );
+}
+```
 
 
 # Unsorted
@@ -70,4 +150,6 @@ dte.ItemOperations.OpenFile(documentFullPath, "{" + VSConstants.LOGVIEWID_Code +
 ## Visual Studio's KnownMonikers
 
 The images contained in Visual Studio's IVsImageService: http://glyphlist.azurewebsites.net/knownmonikers/
+
+Makes it easier to create and maintain .imagemanifest files: https://marketplace.visualstudio.com/items?itemName=MadsKristensen.ImageManifestTools
 
