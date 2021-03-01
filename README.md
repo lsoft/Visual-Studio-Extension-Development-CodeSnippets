@@ -1,5 +1,5 @@
-# Visual-Studio-Extension-Development-CodeSnippets
-Some useful links and pieces of code in the scope of Visual Studio Extension (vsix) development
+# Visual Studio Extension Development Tips && CodeSnippets
+Some useful links and pieces of code in the scope of Visual Studio Extension (vsix) development.
 
 
 # General
@@ -20,6 +20,10 @@ https://docs.microsoft.com/en-us/visualstudio/extensibility/internals/list-of-av
 
 https://gitter.im/Microsoft/extendvs
 
+# Youtube channel
+
+https://www.youtube.com/playlist?list=PLReL099Y5nRdG2n1PrY_tbCsUznoYvqkS
+
 
 # Code snippets
 
@@ -39,6 +43,8 @@ VsShellUtilities.ShowMessageBox(
 Also, [this video](https://www.youtube.com/watch?v=kqcOg0b_XhA&list=PLReL099Y5nRdG2n1PrY_tbCsUznoYvqkS&index=2) is useful.
 
 ## Wait for solution is fully loaded
+
+Run periodically:
 
 ```csharp
 var solution = AsyncPackage.GetGlobalService(typeof(SVsSolution)) as IVsSolution;
