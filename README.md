@@ -20,6 +20,10 @@ https://docs.microsoft.com/en-us/visualstudio/extensibility/internals/list-of-av
 
 https://gitter.im/Microsoft/extendvs
 
+## A place were questions lives
+
+https://docs.microsoft.com/en-us/answers/topics/vs-extensions.html
+
 # Youtube channel
 
 https://www.youtube.com/playlist?list=PLReL099Y5nRdG2n1PrY_tbCsUznoYvqkS
