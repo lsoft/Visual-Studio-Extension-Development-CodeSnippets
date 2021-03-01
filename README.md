@@ -165,3 +165,6 @@ The images contained in Visual Studio's IVsImageService: http://glyphlist.azurew
 
 Makes it easier to create and maintain .imagemanifest files: https://marketplace.visualstudio.com/items?itemName=MadsKristensen.ImageManifestTools
 
+## Debugging codelens
+
+To debug your implementation of `IAsyncCodeLensDataPointProvider` you need to attach `ServiceHub.HostCLR.x86.exe`, otherwise not breakpoint hit occurs. There are a few these processed, so attach them all!
