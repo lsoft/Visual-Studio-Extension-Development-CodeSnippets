@@ -181,3 +181,10 @@ Makes it easier to create and maintain .imagemanifest files: https://marketplace
 ## Debugging codelens
 
 To debug your implementation of `IAsyncCodeLensDataPointProvider` you need to attach `ServiceHub.HostCLR.x86.exe`, otherwise not breakpoint hit occurs. There are a few these processed, so attach them all!
+
+## Debug & Release
+
+If your VSIX is in Debug mode, but you are receiving a message like 'you are debugging a release version' of your vsix, and nothing from Internet helps you, try to set the following checkbox:
+
+![image](https://user-images.githubusercontent.com/5988558/109665763-55355e00-7b90-11eb-827c-31d5ccb99f2c.png)
+
