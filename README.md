@@ -24,10 +24,13 @@ https://gitter.im/Microsoft/extendvs
 
 https://docs.microsoft.com/en-us/answers/topics/vs-extensions.html
 
-# Youtube channel
+## Youtube channel
 
 https://www.youtube.com/playlist?list=PLReL099Y5nRdG2n1PrY_tbCsUznoYvqkS
 
+## Asynchronous and multithreaded programming within VS using the JoinableTaskFactory
+
+https://devblogs.microsoft.com/premier-developer/asynchronous-and-multithreaded-programming-within-vs-using-the-joinabletaskfactory/
 
 # Code snippets
 
