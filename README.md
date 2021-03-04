@@ -188,3 +188,6 @@ If your VSIX is in Debug mode, but you are receiving a message like 'you are deb
 
 ![image](https://user-images.githubusercontent.com/5988558/109665763-55355e00-7b90-11eb-827c-31d5ccb99f2c.png)
 
+# Amazing example of codelens extension (Microscope)
+
+If you are developing a codelens VS extension, you 100% should to take a look to [this repo](https://github.com/bert2/microscope).
