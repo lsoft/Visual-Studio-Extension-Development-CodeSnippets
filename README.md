@@ -220,6 +220,13 @@ If your VSIX is in Debug mode, but you are receiving a message like 'you are deb
 
 ![image](https://user-images.githubusercontent.com/5988558/109665763-55355e00-7b90-11eb-827c-31d5ccb99f2c.png)
 
+# and event this checkbox did not help you?
+
+If so, you have only one option behind: you need to sign your assemblies with pfx:
+
+![image](https://user-images.githubusercontent.com/5988558/110215436-e40ce800-7eba-11eb-9f87-985bc8fba060.png)
+
+
 # Amazing example of codelens extension (Microscope)
 
 If you are developing a codelens VS extension, you 100% should to take a look to [this repo](https://github.com/bert2/microscope).
