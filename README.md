@@ -72,6 +72,38 @@ if (asm is bool)
 
 ```
 
+## .. but it will not help you, if you need a project references
+
+because references are the subject for lazy loading in modern VS 2019. You need to wait until intellisense is activated:
+
+```charp
+var operationProgress = Package.GetGlobalService(typeof(SVsOperationProgress)) as IVsOperationProgress2;
+if (operationProgress != null)
+{
+    var opss = operationProgress as IVsOperationProgressStatusService;
+
+    if (opss != null)
+    {
+        var intelliSenseStageStatus = opss.GetStageStatus(CommonOperationProgressStageIds.Intellisense);
+        intelliSenseStageStatus.InProgressChanged += IntelliSenseStatus_InProgressChanged;
+    }
+}
+
+...
+
+private void IntelliSenseStatus_InProgressChanged(object sender, OperationProgressStatusChangedEventArgs e)
+{
+    if (!e.Status.IsInProgress)
+    {
+        //here project references is loaded and ready to work with
+    }
+}
+
+```
+
+Please refer to `https://github.com/lsoft/DpdtInject` and `https://github.com/microsoft/VSSDK-Extensibility-Samples/tree/master/OperationProgress` for additional details.
+
+
 ## Visual Studio events
 
 Use 
