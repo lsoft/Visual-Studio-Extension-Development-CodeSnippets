@@ -72,7 +72,7 @@ if (asm is bool)
 
 ```
 
-## .. but it will not help you, if you need a project references
+## ... but it will not help you, if you need a project references
 
 because references are the subject for lazy loading in modern VS 2019. You need to wait until intellisense is activated:
 
@@ -220,7 +220,7 @@ If your VSIX is in Debug mode, but you are receiving a message like 'you are deb
 
 ![image](https://user-images.githubusercontent.com/5988558/109665763-55355e00-7b90-11eb-827c-31d5ccb99f2c.png)
 
-# and event this checkbox did not help you?
+# and even this checkbox did not help you?
 
 If so, you have only one option behind: you need to sign your assemblies with pfx:
 
