@@ -222,7 +222,7 @@ If your VSIX is in Debug mode, but you are receiving a message like 'you are deb
 
 # and even this checkbox did not help you?
 
-If so, you have only one option behind: you need to sign your assemblies with pfx:
+If so, you have only one option behind: you need to sign your assemblies like so:
 
 ![image](https://user-images.githubusercontent.com/5988558/110215436-e40ce800-7eba-11eb-9f87-985bc8fba060.png)
 
