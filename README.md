@@ -233,7 +233,7 @@ At first, it useful to open the Debug -> Windows -> Modules window when debuggin
 
 ![изображение](https://user-images.githubusercontent.com/5988558/111653608-1999c580-8819-11eb-9c1f-67a69dd8bd60.png)
 
-All paths of your dlls should be correct, in my case - from vsix install folder. It is a starting point. Your dll may be loaded from GAC instead of local version, investigate! In my case one of the dll are loaded from 'C:\Users\<iam>\AppData\Local\Temp\VS\AnalyzerAssemblyLoader\<someguid>\1\my.dll'. I suspect it is because that dll is C# Source Generator, but by VSIX uses it as a regular DLL. This fact (I suspect again) interfered the process of VSIX loading, and broke it. Solution is unknown.
+All paths of your dlls should be correct, in my case - from vsix install folder. It is a starting point. Your dll may be loaded from GAC instead of local version, investigate! In my case one of the dll are loaded from `C:\Users\<iam>\AppData\Local\Temp\VS\AnalyzerAssemblyLoader\<someguid>\1\my.dll`. I suspect it is because that dll is C# Source Generator, but by VSIX uses it as a regular DLL. This fact (I suspect again) interfered the process of VSIX loading, and broke it. Solution is not to load SG-assembly. Leavy in that assembly only 1 type - SG type, move other to the different assembly and load it in VSIX.
 
 # Amazing example of codelens extension (Microscope)
 
