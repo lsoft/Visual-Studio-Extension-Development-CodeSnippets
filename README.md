@@ -227,6 +227,14 @@ If so, you have only one option behind: you need to sign your assemblies like so
 ![image](https://user-images.githubusercontent.com/5988558/110215436-e40ce800-7eba-11eb-9f87-985bc8fba060.png)
 
 
+## MissingMethodException
+
+At first, it useful to open the Debug -> Windows -> Modules window when debugging to see where the assembly was being loaded from. You should see something like the following:
+
+![изображение](https://user-images.githubusercontent.com/5988558/111653608-1999c580-8819-11eb-9c1f-67a69dd8bd60.png)
+
+All paths of your dlls should be correct, in my case - from vsix install folder. It is a starting point. Your dll may be loaded from GAC instead of local version, investigate! In my case one of the dll are loaded from 'C:\Users\<iam>\AppData\Local\Temp\VS\AnalyzerAssemblyLoader\<someguid>\1\my.dll'. I suspect it is because that dll is C# Source Generator, but by VSIX uses it as a regular DLL. This fact (I suspect again) interfered the process of VSIX loading, and broke it. Solution is unknown.
+
 # Amazing example of codelens extension (Microscope)
 
 If you are developing a codelens VS extension, you 100% should to take a look to [this repo](https://github.com/bert2/microscope).
