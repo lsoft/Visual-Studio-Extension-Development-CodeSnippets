@@ -105,6 +105,9 @@ private void IntelliSenseStatus_InProgressChanged(object sender, OperationProgre
 
 Please refer to `https://github.com/lsoft/DpdtInject` and `https://github.com/microsoft/VSSDK-Extensibility-Samples/tree/master/OperationProgress` for additional details.
 
+## Stylization for current VS theme
+
+[Here](https://github.com/madskristensen/DeveloperNews) is a good example to how stylize a whole window.
 
 ## Visual Studio events
 
