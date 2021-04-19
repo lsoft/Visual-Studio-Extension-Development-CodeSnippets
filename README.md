@@ -209,6 +209,10 @@ public static void OpenAndNavigate(
 
 # Unsorted
 
+## Visual Studio Toolkit
+
+https://github.com/VsixCommunity/Community.VisualStudio.Toolkit
+
 ## Visual Studio's KnownMonikers
 
 The images contained in Visual Studio's IVsImageService: http://glyphlist.azurewebsites.net/knownmonikers/
