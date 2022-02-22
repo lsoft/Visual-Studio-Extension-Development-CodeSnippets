@@ -12,6 +12,8 @@ https://marketplace.visualstudio.com/
 
 https://docs.microsoft.com/en-us/visualstudio/extensibility/?view=vs-2019&amp%3BWT.mc_id=docs-twitter-jamont
 
+https://github.com/MicrosoftDocs/visualstudio-docs/tree/main/docs/extensibility
+
 ## List of available services for extension author
 
 https://docs.microsoft.com/en-us/visualstudio/extensibility/internals/list-of-available-services?view=vs-2019
